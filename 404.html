@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>找不到這一頁</title>
+<!--
+  GitHub Pages 的網址路徑是區分大小寫的，而倉庫名稱不是 ——
+  所以 /EarSleuth/ 跟 /earsleuth/ 在 GitHub 眼中是同一個倉庫，
+  但只有後者打得開。倉庫改過名字的話，舊連結、舊書籤、手機桌面捷徑
+  就會全部變成 404，而且沒辦法從已經存起來的連結那邊修。
+
+  使用者站台（這個倉庫）的 404 頁會接住整個網域上所有對不上的路徑，
+  所以在這裡把大小寫喬回來，舊連結就救得回來了。
+-->
+<script>
+(function(){
+  // 實際存在的站台。比對時不分大小寫，轉址時用這裡寫的正確寫法。
+  var 站台 = ['earsleuth', 'Song_Guessing_Game'];
+
+  var 路徑 = location.pathname.replace(/^\/+/, '');
+  var 第一段 = 路徑.split('/')[0];
+  if(!第一段) return;
+
+  for(var i = 0; i < 站台.length; i++){
+    if(第一段.toLowerCase() !== 站台[i].toLowerCase()) continue;
+    // 大小寫本來就對的話不要跳 —— 那代表站台本身真的有問題，
+    // 跳過去只會變成無限轉圈
+    if(第一段 === 站台[i]) return;
+    var 新路徑 = '/' + 站台[i] + 路徑.slice(第一段.length);
+    location.replace(新路徑 + location.search + location.hash);
+    return;
+  }
+})();
+</script>
+<style>
+  :root{ color-scheme: dark; }
+  body{
+    margin:0; min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background:#0a2447; color:#eaf2ff;
+    font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+    text-align:center; padding:24px;
+  }
+  .box{ max-width:420px; }
+  h1{ font-size:52px; margin:0 0 4px; letter-spacing:2px; }
+  p{ color:#9fb8d8; line-height:1.7; margin:0 0 24px; }
+  a{
+    display:block; margin:10px 0; padding:14px 18px;
+    background:#123a6b; color:#eaf2ff; text-decoration:none;
+    border-radius:12px; border:2px solid transparent;
+  }
+  a:hover{ border-color:#2ec4b6; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>404</h1>
+    <p>這個網址不存在。<br>可能是舊連結，或是網址打錯了。</p>
+    <a href="/earsleuth/">🎧 音隙偵探</a>
+    <a href="/Song_Guessing_Game/">💿 黑膠猜歌遊戲</a>
+  </div>
+</body>
+</html>
