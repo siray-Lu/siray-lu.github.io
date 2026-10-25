@@ -22,9 +22,12 @@
     border-radius:14px; border:2px solid transparent;
   }
   a:hover{ border-color:#2ec4b6; }
-  .vinyl{ vertical-align:-4px; }
-  .t{ font-size:18px; font-weight:700; }
-  .d{ font-size:13px; color:#9fb8d8; margin-top:4px; }
+  /* 圖示與文字用 flex 置中對齊。靠 vertical-align 微調的話，
+     圖一比文字大就會往下掉，整行看起來是歪的。 */
+  .t{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    font-size:18px; font-weight:700;
+  }
 </style>
 </head>
 <body>
@@ -32,10 +35,9 @@
     <h1>🎵 Siray 的小遊戲</h1>
     <a href="/earsleuth/">
       <div class="t">🎧 音隙偵探</div>
-      <div class="d">聽一小段就猜出歌名・1018 首華語金曲・可連線對戰</div>
     </a>
     <a href="/Song_Guessing_Game/">
-      <div class="t"><svg class="vinyl" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="11.2" fill="#141414"/><circle cx="12" cy="12" r="8.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="6.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="4.3" fill="#2ec4b6"/><circle cx="12" cy="12" r="1" fill="#0a2447"/></svg> 黑膠猜歌遊戲</div>
+      <div class="t"><svg class="vinyl" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="11.2" fill="#141414"/><circle cx="12" cy="12" r="8.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="6.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="4.3" fill="#2ec4b6"/><circle cx="12" cy="12" r="1" fill="#0a2447"/></svg> 黑膠猜歌遊戲</div>
     </a>
   </div>
 </body>

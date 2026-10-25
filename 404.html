@@ -52,7 +52,8 @@
     border-radius:12px; border:2px solid transparent;
   }
   a:hover{ border-color:#2ec4b6; }
-  .vinyl{ vertical-align:-4px; }
+  /* 跟首頁一樣用 flex 對齊，不然圖示會壓著文字往下掉 */
+  a{ display:flex; align-items:center; justify-content:center; gap:8px; }
 </style>
 </head>
 <body>
@@ -60,7 +61,7 @@
     <h1>404</h1>
     <p>這個網址不存在。<br>可能是舊連結，或是網址打錯了。</p>
     <a href="/earsleuth/">🎧 音隙偵探</a>
-    <a href="/Song_Guessing_Game/"><svg class="vinyl" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="11.2" fill="#141414"/><circle cx="12" cy="12" r="8.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="6.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="4.3" fill="#2ec4b6"/><circle cx="12" cy="12" r="1" fill="#0a2447"/></svg> 黑膠猜歌遊戲</a>
+    <a href="/Song_Guessing_Game/"><svg class="vinyl" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="12" cy="12" r="11.2" fill="#141414"/><circle cx="12" cy="12" r="8.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="6.6" fill="none" stroke="#333" stroke-width=".8"/><circle cx="12" cy="12" r="4.3" fill="#2ec4b6"/><circle cx="12" cy="12" r="1" fill="#0a2447"/></svg> 黑膠猜歌遊戲</a>
   </div>
 </body>
 </html>
